@@ -1,5 +1,5 @@
 function FindProxyForURL(url, host) {
-if (shExpMatch(url, "mesu.apple.com/assets/com_apple_MobileAsset_SoftwareUpdate/")
+if (shExpMatch(url, "mesu.apple.com/assets/com_apple_MobileAsset_SoftwareUpdate/*")
 || shExpMatch(host, "appldnld.apple.com")
 || shExpMatch(host, "gdmf.apple.com")
 || shExpMatch(host, "ocsp.apple.com")
