@@ -1,5 +1,5 @@
 function FindProxyForURL(url, host) {
-if (shExpMatch(url, "mesu.apple.com/assets/com_apple")
+if (shExpMatch(url, "mesu.apple.com/assets/")
 || shExpMatch(host, "appldnld.apple.com")
 || shExpMatch(host, "gdmf.apple.com")
 || shExpMatch(host, "ocsp.apple.com")
