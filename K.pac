@@ -1,8 +1,15 @@
 function FindProxyForURL(url, host) {
-if (shExpMatch(host, "ocsp.apple.com")
-|| shExpMatch(host, "mesu.apple.com")
-|| shExpMatch(host, "xp.apple.com")
-|| shExpMatch(host, "gdmf.apple.com")
-|| shExpMatch(host, "appldnld.apple.com"))
-{return "PROXY 127.0.0.1:80";}
-return "DIRECT";}
+  var domains = {
+"ocsp.apple.com":1,
+"mesu.apple.com":1,
+"xp.apple.com":1,
+"gdmf.apple.com":1,
+"appldnld.apple.com":1};
+  var lastPos;
+    do {
+      if (domains.hasOwnProperty(host))
+      {return "SOCKS5 127.0.0.1:1080; SOCKS 127.0.0.1:1080;";}
+    lastPos = host.indexOf('.') + 1;
+    host = host.slice(lastPos);}
+    while (lastPos >= 1);
+return "DIRECT"}
