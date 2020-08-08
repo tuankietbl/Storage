@@ -275,7 +275,7 @@ distroCheck(){
 
 	if [ "$PLAT" = "Debian" ] || [ "$PLAT" = "Ubuntu" ]; then
 		DPKG_ARCH="$(dpkg --print-architecture)"
-		if [ "$DPKG_ARCH" = "amd64" ] || [ "$DPKG_ARCH" = "i386" ]; then
+		if [ "$DPKG_ARCH" = "sunxi64" ] || [ "$DPKG_ARCH" = "i386" ]; then
 			X86_SYSTEM=1
 		else
 			X86_SYSTEM=0
