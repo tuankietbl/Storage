@@ -275,7 +275,7 @@ distroCheck(){
 
 	if [ "$PLAT" = "Debian" ] || [ "$PLAT" = "Ubuntu" ]; then
 		DPKG_ARCH="$(dpkg --print-architecture)"
-		if [ "$DPKG_ARCH" = "sunxi64" ] || [ "$DPKG_ARCH" = "i386" ]; then
+		if [ "$DPKG_ARCH" = "amd64" ] || [ "$DPKG_ARCH" = "i386" ]; then
 			X86_SYSTEM=1
 		else
 			X86_SYSTEM=0
@@ -1289,7 +1289,7 @@ installWireGuard(){
 			$SUDO ${UPDATE_PKG_CACHE} &> /dev/null & spinner $!
 		fi
 
-		PIVPN_DEPS=(wireguard wireguard-tools wireguard-dkms qrencode)
+		PIVPN_DEPS=(linux-headers-amd64 wireguard wireguard-tools wireguard-dkms qrencode)
 		installDependentPackages PIVPN_DEPS[@]
 
 	elif [ "$PLAT" = "Ubuntu" ]; then
@@ -1309,7 +1309,7 @@ installWireGuard(){
 			$SUDO ${UPDATE_PKG_CACHE} &> /dev/null & spinner $!
 		fi
 
-		PIVPN_DEPS=(linux-headers-generic wireguard wireguard-tools wireguard-dkms qrencode)
+		PIVPN_DEPS=(wireguard wireguard-tools wireguard-dkms qrencode)
 		installDependentPackages PIVPN_DEPS[@]
 
 	fi
